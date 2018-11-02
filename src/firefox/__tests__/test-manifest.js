@@ -24,7 +24,6 @@ test('manifest does not use plugins', () => {
 test('manifest applications are as expected', () => {
   expect(manifest['applications']).toEqual({
     'gecko': {
-      'id': 'tabforacause@tabforacause.org',
       'strict_min_version': '56.0a1'
     }
   })
@@ -33,5 +32,5 @@ test('manifest applications are as expected', () => {
 // Basic display tests.
 
 test('extension name is correct', () => {
-  expect(manifest['name']).toBe('Tab for a Cause')
+  expect(manifest['name']).toBe('Search for a Cause')
 })
