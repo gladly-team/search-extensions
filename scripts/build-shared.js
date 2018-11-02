@@ -18,6 +18,17 @@ var webpackConfig = {
   output: {
     filename: 'background.js',
     path: path.resolve(BUILD_DIR, 'js')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader'
+        }
+      }
+    ]
   }
 }
 
