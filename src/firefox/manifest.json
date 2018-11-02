@@ -9,7 +9,7 @@
     "128": "./img/logo128.png"
   },
   "background": {
-    "scripts": ["ext-background.js"],
+    "scripts": ["js/background.js"],
     "persistent": false
   },
   "permissions": [
