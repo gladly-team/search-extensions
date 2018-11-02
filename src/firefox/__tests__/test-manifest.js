@@ -1,8 +1,6 @@
 /* eslint-env jest */
 
 const manifest = require('../manifest.json')
-const manifestAddonStore = require('../manifest.addon-store-overrides.json')
-const manifestSelfHosted = require('../manifest.self-hosted-overrides.json')
 
 // Tests to avoid accidentally requesting new permissions.
 
@@ -23,25 +21,11 @@ test('manifest does not use plugins', () => {
   expect(manifest['plugins']).toBeUndefined()
 })
 
-test('addon store manifest overrides are as expected', () => {
-  expect(manifestAddonStore).toEqual({
-    'applications': {
-      'gecko': {
-        'id': 'tabforacause@tabforacause.org',
-        'strict_min_version': '56.0a1'
-      }
-    }
-  })
-})
-
-test('self-hosted manifest overrides are as expected', () => {
-  expect(manifestSelfHosted).toEqual({
-    'applications': {
-      'gecko': {
-        'id': 'contact@tabforacause.org',
-        'strict_min_version': '56.0a1',
-        'update_url': 'https://tab.gladly.io/firefox/update.json'
-      }
+test('manifest applications are as expected', () => {
+  expect(manifest['applications']).toEqual({
+    'gecko': {
+      'id': 'tabforacause@tabforacause.org',
+      'strict_min_version': '56.0a1'
     }
   })
 })
