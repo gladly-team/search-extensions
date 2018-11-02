@@ -12,9 +12,6 @@
     "scripts": ["ext-background.js"],
     "persistent": false
   },
-  "chrome_url_overrides": {
-    "newtab": "iframe.html"
-  },
   "permissions": [
     "tabs"
   ],
