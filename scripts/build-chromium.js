@@ -23,7 +23,7 @@ console.log('Building extension version ' + version + '...')
 fs.emptyDirSync(BUILD_DIR)
 
 // Create the build version of the src.
-var stageDir = path.join(BUILD_DIR, 'chrome-tfac')
+var stageDir = path.join(BUILD_DIR, 'chrome-search-for-a-cause')
 
 // Filter copying source files to build. Return true if we should copy and
 // false if we should not.
@@ -41,7 +41,7 @@ execSync('yarn run shared:build')
 fs.copySync(SHARED_CODE_BUILD_DIR, stageDir)
 
 // Create zip file.
-var zipFileName = 'chrome-tfac-v' + version + '.zip'
+var zipFileName = 'chrome-search-for-a-cause-v' + version + '.zip'
 var output = fs.createWriteStream(path.join(BUILD_DIR, zipFileName))
 var archive = archiver('zip')
 
