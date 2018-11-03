@@ -29,6 +29,17 @@ test('manifest applications are as expected', () => {
   })
 })
 
+test('only overrides search settings', () => {
+  expect(Object.keys(manifest['chrome_settings_overrides']))
+    .toEqual(['search_provider'])
+})
+
+test('search name is as expected', () => {
+  expect(
+    manifest['chrome_settings_overrides']['search_provider']['name'])
+    .toEqual('Search for a Cause')
+})
+
 // Basic display tests.
 
 test('extension name is correct', () => {

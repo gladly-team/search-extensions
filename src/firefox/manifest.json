@@ -11,6 +11,16 @@
   "background": {
     "scripts": ["js/background.js"]
   },
+  "chrome_settings_overrides": {
+    "search_provider": {
+      "name": "Search for a Cause",
+      "keyword": "SFAC",
+      "search_url": "https://dev-tab2017.gladly.io/search?q={searchTerms}",
+      "favicon_url": "https://tab.gladly.io/newtab/icons-42ff85cc2cd53d8b026433ad5b505d29/favicon-32x32.png",
+      "encoding": "UTF-8",
+      "is_default": true
+    }
+  },
   "permissions": [
     "tabs"
   ],
