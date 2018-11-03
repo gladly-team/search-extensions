@@ -33,7 +33,6 @@ function Extension () {
     _this[api] = null
 
     try {
-      console.log('chrome[api]', chrome[api])
       if (chrome[api]) {
         _this[api] = chrome[api]
       }

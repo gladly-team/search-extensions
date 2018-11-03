@@ -1,7 +1,5 @@
 /* eslint-env jest */
 
-// Used in package.json Jest configuration
-// and run before tests
 global.localStorage = {
   getItem: jest.fn(),
   setItem: jest.fn(),
