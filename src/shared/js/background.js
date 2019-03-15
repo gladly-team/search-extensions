@@ -1,22 +1,24 @@
 
-import ext from './extension'
+// import ext from './extension'
 
-// On install, open a welcome tab.
-ext.runtime.onInstalled.addListener(object => {
-  try {
-    if (object.reason === ext.runtime.OnInstalledReason.INSTALL) {
-      const postInstallURL = 'https://tab.gladly.io/newtab/first-tab/'
-      ext.tabs.create({ url: postInstallURL })
-    }
-  } catch (e) {
-    console.error(e)
-  }
-})
+// TODO: update URLs for these pages before enabling.
 
-// On uninstall, open a post-uninstall page to get feedback.
-try {
-  const postUninstallURL = 'https://tab.gladly.io/newtab/uninstalled/'
-  ext.runtime.setUninstallURL(postUninstallURL)
-} catch (e) {
-  console.error(e)
-}
+// // On install, open a welcome tab.
+// ext.runtime.onInstalled.addListener(object => {
+//   try {
+//     if (object.reason === ext.runtime.OnInstalledReason.INSTALL) {
+//       const postInstallURL = 'https://tab.gladly.io/newtab/first-tab/'
+//       ext.tabs.create({ url: postInstallURL })
+//     }
+//   } catch (e) {
+//     console.error(e)
+//   }
+// })
+
+// // On uninstall, open a post-uninstall page to get feedback.
+// try {
+//   const postUninstallURL = 'https://tab.gladly.io/newtab/uninstalled/'
+//   ext.runtime.setUninstallURL(postUninstallURL)
+// } catch (e) {
+//   console.error(e)
+// }
