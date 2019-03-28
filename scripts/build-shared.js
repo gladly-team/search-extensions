@@ -1,9 +1,11 @@
-var fs = require('fs-extra')
-var path = require('path')
-var webpack = require('webpack')
+/* eslint no-console:0, import/no-extraneous-dependencies:0 */
 
-var SRC_DIR = path.join(__dirname, '../src/shared/')
-var BUILD_DIR = path.join(__dirname, '../intermediate-builds/shared/')
+const fs = require('fs-extra')
+const path = require('path')
+const webpack = require('webpack')
+
+const SRC_DIR = path.join(__dirname, '../src/shared/')
+const BUILD_DIR = path.join(__dirname, '../intermediate-builds/shared/')
 
 if (process.env.NODE_ENV !== 'production') {
   throw new Error('Builds must have NODE_ENV=production')
@@ -12,7 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
 // Empty the build directory.
 fs.emptyDirSync(BUILD_DIR)
 
-var webpackConfig = {
+const webpackConfig = {
   entry: path.resolve(SRC_DIR, './js/background.js'),
   output: {
     filename: 'background.js',
@@ -31,7 +33,7 @@ var webpackConfig = {
   },
 }
 
-webpack(webpackConfig).run((err, stats) => {
+webpack(webpackConfig).run(err => {
   if (err) {
     console.log('Failed to compile.', err)
     process.exit(1)
