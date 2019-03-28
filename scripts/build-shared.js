@@ -1,4 +1,3 @@
-
 var fs = require('fs-extra')
 var path = require('path')
 var webpack = require('webpack')
@@ -17,7 +16,7 @@ var webpackConfig = {
   entry: path.resolve(SRC_DIR, './js/background.js'),
   output: {
     filename: 'background.js',
-    path: path.resolve(BUILD_DIR, 'js')
+    path: path.resolve(BUILD_DIR, 'js'),
   },
   module: {
     rules: [
@@ -25,11 +24,11 @@ var webpackConfig = {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader'
-        }
-      }
-    ]
-  }
+          loader: 'babel-loader',
+        },
+      },
+    ],
+  },
 }
 
 webpack(webpackConfig).run((err, stats) => {

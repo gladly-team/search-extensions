@@ -1,4 +1,3 @@
-
 var fs = require('fs-extra')
 var path = require('path')
 const execSync = require('child_process').execSync
@@ -10,7 +9,10 @@ var archiver = require('archiver')
 
 var BASE_BUILD_DIR = path.join(__dirname, '../build/')
 var BUILD_DIR = path.join(BASE_BUILD_DIR, 'chromium/')
-var SHARED_CODE_BUILD_DIR = path.join(__dirname, '../intermediate-builds/shared/')
+var SHARED_CODE_BUILD_DIR = path.join(
+  __dirname,
+  '../intermediate-builds/shared/'
+)
 var SRC_DIR = path.join(__dirname, '../src/chromium/')
 
 // Get the version number.
@@ -46,12 +48,12 @@ var output = fs.createWriteStream(path.join(BUILD_DIR, zipFileName))
 var archive = archiver('zip')
 
 // Listen for all archive data to be written.
-output.on('close', function () {
+output.on('close', function() {
   console.log(archive.pointer() + ' total bytes')
   console.log('Finished building.')
 })
 
-archive.on('error', function (err) {
+archive.on('error', function(err) {
   throw err
 })
 

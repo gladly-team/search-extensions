@@ -23,21 +23,22 @@ test('manifest does not use plugins', () => {
 
 test('manifest applications are as expected', () => {
   expect(manifest['applications']).toEqual({
-    'gecko': {
-      'strict_min_version': '56.0a1'
-    }
+    gecko: {
+      strict_min_version: '56.0a1',
+    },
   })
 })
 
 test('only overrides search settings', () => {
-  expect(Object.keys(manifest['chrome_settings_overrides']))
-    .toEqual(['search_provider'])
+  expect(Object.keys(manifest['chrome_settings_overrides'])).toEqual([
+    'search_provider',
+  ])
 })
 
 test('search name is as expected', () => {
   expect(
-    manifest['chrome_settings_overrides']['search_provider']['name'])
-    .toEqual('Search for a Cause')
+    manifest['chrome_settings_overrides']['search_provider']['name']
+  ).toEqual('Search for a Cause')
 })
 
 // Basic display tests.

@@ -23,14 +23,15 @@ test('manifest does not use plugins', () => {
 })
 
 test('only overrides search settings', () => {
-  expect(Object.keys(manifest['chrome_settings_overrides']))
-    .toEqual(['search_provider'])
+  expect(Object.keys(manifest['chrome_settings_overrides'])).toEqual([
+    'search_provider',
+  ])
 })
 
 test('search name is as expected', () => {
   expect(
-    manifest['chrome_settings_overrides']['search_provider']['name'])
-    .toEqual('Search for a Cause')
+    manifest['chrome_settings_overrides']['search_provider']['name']
+  ).toEqual('Search for a Cause')
 })
 
 // Basic display tests.

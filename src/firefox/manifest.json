@@ -21,7 +21,7 @@
       "is_default": true
     }
   },
-"permissions": [],
+  "permissions": [],
   "manifest_version": 2,
   "applications": {
     "gecko": {
