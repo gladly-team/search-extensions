@@ -8,6 +8,11 @@ global.localStorage = {
 
 // Mock Chrome extension APIs
 global.chrome = {
+  browserAction: {
+    onClicked: {
+      addListener: jest.fn(),
+    },
+  },
   runtime: {
     onInstalled: {
       addListener: jest.fn(),
@@ -27,6 +32,11 @@ global.chrome = {
 
 // Mock Firefox extension APIs
 global.browser = {
+  browserAction: {
+    onClicked: {
+      addListener: jest.fn(),
+    },
+  },
   runtime: {
     onInstalled: {
       addListener: jest.fn(),

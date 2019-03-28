@@ -1,6 +1,8 @@
 /* eslint no-console: 0, no-empty: 0 */
 /* globals chrome browser window */
 
+// Note: we partially mock the browser APIs in setupTests.js.
+
 // From:
 // https://github.com/EmailThis/extension-boilerplate
 const apis = [
@@ -59,17 +61,13 @@ function Extension() {
     if (browser && browser.runtime) {
       this.runtime = browser.runtime
     }
-  } catch (e) {
-    console.error(e)
-  }
+  } catch (e) {}
 
   try {
     if (browser && browser.browserAction) {
       this.browserAction = browser.browserAction
     }
-  } catch (e) {
-    console.error(e)
-  }
+  } catch (e) {}
 }
 
 module.exports = new Extension()

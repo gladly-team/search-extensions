@@ -1,4 +1,6 @@
-// import ext from './extension'
+/* eslint no-console:0 */
+
+import ext from './extension'
 
 // TODO: update URLs for these pages before enabling.
 
@@ -21,3 +23,15 @@
 // } catch (e) {
 //   console.error(e)
 // }
+
+try {
+  ext.browserAction.onClicked.addListener(() => {
+    try {
+      ext.tabs.create({ url: 'https://tab.gladly.io/search/random/' })
+    } catch (e) {
+      console.error(e)
+    }
+  })
+} catch (e) {
+  console.error(e)
+}
