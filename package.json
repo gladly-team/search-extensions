@@ -17,7 +17,9 @@
     "firefox:develop:webext": "sleep 8 && web-ext run --source-dir=./intermediate-builds/firefox",
     "firefox:develop:watch": "nodemon --watch ./src -e js,json,html --exec \"yarn run firefox:build:no-test && yarn run firefox:test\"",
     "shared:build": "NODE_ENV=production node ./scripts/build-shared.js",
-    "lint": "standard"
+    "format": "prettier \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "format:fix": "yarn run format --write",
+    "lint": "eslint \"**/*.js\""
   },
   "repository": {
     "type": "git",
