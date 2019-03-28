@@ -26,7 +26,7 @@
       "name": "Search for a Cause",
       "keyword": "SFAC",
       "search_url": "https://tab.gladly.io/search?q={searchTerms}&src=chrome",
-      "favicon_url": "https://tab.gladly.io/newtab/icons-42ff85cc2cd53d8b026433ad5b505d29/favicon-32x32.png",
+      "favicon_url": "https://tab.gladly.io/newtab/search-favicon.png",
       "encoding": "UTF-8",
       "is_default": true
     }
