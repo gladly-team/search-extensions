@@ -1,4 +1,5 @@
-/* globals chrome browser */
+/* eslint no-console: 0, no-empty: 0 */
+/* globals chrome browser window */
 
 // From:
 // https://github.com/EmailThis/extension-boilerplate
@@ -23,13 +24,13 @@ const apis = [
   'tabs',
   'webNavigation',
   'webRequest',
-  'windows'
+  'windows',
 ]
 
-function Extension () {
+function Extension() {
   const _this = this
 
-  apis.forEach(function (api) {
+  apis.forEach(api => {
     _this[api] = null
 
     try {
@@ -58,13 +59,17 @@ function Extension () {
     if (browser && browser.runtime) {
       this.runtime = browser.runtime
     }
-  } catch (e) {}
+  } catch (e) {
+    console.error(e)
+  }
 
   try {
     if (browser && browser.browserAction) {
       this.browserAction = browser.browserAction
     }
-  } catch (e) {}
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 module.exports = new Extension()

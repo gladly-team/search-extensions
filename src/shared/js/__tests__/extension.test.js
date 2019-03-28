@@ -13,19 +13,19 @@ describe('shared extension API', () => {
     global.chrome = {
       runtime: {
         onInstalled: {
-          addListener: jest.fn()
+          addListener: jest.fn(),
         },
         OnInstalledReason: {
           INSTALL: 'install',
           UPDATE: 'update',
           CHROME_UPDATE: 'chrome_update',
-          SHARED_MODULE_UPDATE: 'shared_module_update'
+          SHARED_MODULE_UPDATE: 'shared_module_update',
         },
-        setUninstallURL: jest.fn()
+        setUninstallURL: jest.fn(),
       },
       tabs: {
-        create: jest.fn()
-      }
+        create: jest.fn(),
+      },
     }
 
     // This is not Firefox.
@@ -34,10 +34,10 @@ describe('shared extension API', () => {
     const ext = require('../extension')
 
     ext.tabs.create({
-      url: 'https://example.com/foo/'
+      url: 'https://example.com/foo/',
     })
     expect(global.chrome.tabs.create).toHaveBeenCalledWith({
-      url: 'https://example.com/foo/'
+      url: 'https://example.com/foo/',
     })
   })
 
@@ -46,19 +46,19 @@ describe('shared extension API', () => {
     global.browser = {
       runtime: {
         onInstalled: {
-          addListener: jest.fn()
+          addListener: jest.fn(),
         },
         OnInstalledReason: {
           INSTALL: 'install',
           UPDATE: 'update',
           CHROME_UPDATE: 'chrome_update',
-          SHARED_MODULE_UPDATE: 'shared_module_update'
+          SHARED_MODULE_UPDATE: 'shared_module_update',
         },
-        setUninstallURL: jest.fn()
+        setUninstallURL: jest.fn(),
       },
       tabs: {
-        create: jest.fn()
-      }
+        create: jest.fn(),
+      },
     }
 
     // This is not Chrome.
@@ -67,10 +67,10 @@ describe('shared extension API', () => {
     const ext = require('../extension')
 
     ext.tabs.create({
-      url: 'https://example.com/foo/'
+      url: 'https://example.com/foo/',
     })
     expect(global.browser.tabs.create).toHaveBeenCalledWith({
-      url: 'https://example.com/foo/'
+      url: 'https://example.com/foo/',
     })
   })
 })

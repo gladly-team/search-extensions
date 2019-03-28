@@ -1,33 +1,37 @@
+/* eslint no-console: 0, import/no-extraneous-dependencies: 0, import/no-dynamic-require: 0 */
 
-var fs = require('fs-extra')
-var path = require('path')
-const execSync = require('child_process').execSync
-var archiver = require('archiver')
+const fs = require('fs-extra')
+const path = require('path')
+const { execSync } = require('child_process')
+const archiver = require('archiver')
 
 // In the future, could consider crx-hotreload script for better
 // development experience:
 // https://github.com/xpl/crx-hotreload/blob/master/hot-reload.js
 
-var BASE_BUILD_DIR = path.join(__dirname, '../build/')
-var BUILD_DIR = path.join(BASE_BUILD_DIR, 'chromium/')
-var SHARED_CODE_BUILD_DIR = path.join(__dirname, '../intermediate-builds/shared/')
-var SRC_DIR = path.join(__dirname, '../src/chromium/')
+const BASE_BUILD_DIR = path.join(__dirname, '../build/')
+const BUILD_DIR = path.join(BASE_BUILD_DIR, 'chromium/')
+const SHARED_CODE_BUILD_DIR = path.join(
+  __dirname,
+  '../intermediate-builds/shared/'
+)
+const SRC_DIR = path.join(__dirname, '../src/chromium/')
 
 // Get the version number.
-var manifest = require(path.join(SRC_DIR, 'manifest.json'))
-var version = manifest['version']
-console.log('Building extension version ' + version + '...')
+const manifest = require(path.join(SRC_DIR, 'manifest.json'))
+const { version } = manifest
+console.log(`Building extension version ${version}...`)
 
 // Empty build target contents. This will also create the directory
 // if it does not exist.
 fs.emptyDirSync(BUILD_DIR)
 
 // Create the build version of the src.
-var stageDir = path.join(BUILD_DIR, 'chrome-search-for-a-cause')
+const stageDir = path.join(BUILD_DIR, 'chrome-search-for-a-cause')
 
 // Filter copying source files to build. Return true if we should copy and
 // false if we should not.
-var filterCopiedFiles = (src, dest) => {
+const filterCopiedFiles = src => {
   if (path.basename(src) === '.DS_Store') {
     return false
   }
@@ -41,17 +45,17 @@ execSync('yarn run shared:build')
 fs.copySync(SHARED_CODE_BUILD_DIR, stageDir)
 
 // Create zip file.
-var zipFileName = 'chrome-search-for-a-cause-v' + version + '.zip'
-var output = fs.createWriteStream(path.join(BUILD_DIR, zipFileName))
-var archive = archiver('zip')
+const zipFileName = `chrome-search-for-a-cause-v${version}.zip`
+const output = fs.createWriteStream(path.join(BUILD_DIR, zipFileName))
+const archive = archiver('zip')
 
 // Listen for all archive data to be written.
-output.on('close', function () {
-  console.log(archive.pointer() + ' total bytes')
+output.on('close', () => {
+  console.log(`${archive.pointer()} total bytes`)
   console.log('Finished building.')
 })
 
-archive.on('error', function (err) {
+archive.on('error', err => {
   throw err
 })
 
