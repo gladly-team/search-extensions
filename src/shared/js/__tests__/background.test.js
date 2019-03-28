@@ -88,7 +88,7 @@ describe('background script', () => {
       id: 'some-tab-id',
     })
     expect(ext.tabs.create).toHaveBeenCalledWith({
-      url: 'https://tab.gladly.io/search?q=hello',
+      url: 'https://tab.gladly.io/search/random/',
     })
   })
 

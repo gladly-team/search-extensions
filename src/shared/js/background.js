@@ -27,7 +27,7 @@ import ext from './extension'
 try {
   ext.browserAction.onClicked.addListener(() => {
     try {
-      ext.tabs.create({ url: 'https://tab.gladly.io/search?q=hello' })
+      ext.tabs.create({ url: 'https://tab.gladly.io/search/random/' })
     } catch (e) {
       console.error(e)
     }
