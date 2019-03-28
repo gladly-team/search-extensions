@@ -30,6 +30,8 @@ test('only overrides search settings', () => {
   ])
 })
 
+// Search settings tests.
+
 test('search name is as expected', () => {
   expect(manifest.chrome_settings_overrides.search_provider.name).toEqual(
     'Search for a Cause'
@@ -78,6 +80,16 @@ test('search URL includes the "src" parameter with a value of "chrome"', () => {
   )
   const { search } = new URL(searchURLPlaceholderRemoved)
   expect(qs.parse(search, { ignoreQueryPrefix: true }).src).toEqual('chrome')
+})
+
+// Browser action tests.
+
+test('browser action display name is as expected', () => {
+  expect(manifest.browser_action.default_title).toEqual('Search for a Cause')
+})
+
+test('browser action default icons match extension icons', () => {
+  expect(manifest.browser_action.default_icon).toEqual(manifest.icons)
 })
 
 // Basic display tests.

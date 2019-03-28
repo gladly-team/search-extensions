@@ -7,6 +7,8 @@ afterEach(() => {
   jest.resetModules()
 })
 
+// Note: we partially mock the browser APIs in setupTests.js.
+
 describe('background script', () => {
   it('is a nice placeholder test', () => {
     expect(true).toBe(true)
@@ -77,4 +79,46 @@ describe('background script', () => {
   //   // Should not throw.
   //   require('../background')
   // })
+
+  it('opens a tab to search on extension icon click', () => {
+    const ext = require('../extension')
+    require('../background')
+    const callback = ext.browserAction.onClicked.addListener.mock.calls[0][0]
+    callback({
+      id: 'some-tab-id',
+    })
+    expect(ext.tabs.create).toHaveBeenCalledWith({
+      url: 'https://tab.gladly.io/search?q=hello',
+    })
+  })
+
+  it('gracefully handles any error when adding a listener for the extension icon click', () => {
+    const ext = require('../extension')
+    ext.browserAction.onClicked.addListener.mockImplementationOnce(() => {
+      throw new Error('Whoops!')
+    })
+
+    // Suppress expected console error.
+    jest.spyOn(console, 'error').mockImplementationOnce(() => {})
+
+    // Should not throw.
+    require('../background')
+  })
+
+  it('gracefully handles any error when opening a tab on extension icon click', () => {
+    const ext = require('../extension')
+    require('../background')
+
+    ext.tabs.create.mockImplementationOnce(() => {
+      throw new Error('Whoops!')
+    })
+
+    // Suppress expected console error.
+    jest.spyOn(console, 'error').mockImplementationOnce(() => {})
+
+    const callback = ext.browserAction.onClicked.addListener.mock.calls[0][0]
+    callback({
+      id: 'some-tab-id',
+    })
+  })
 })
