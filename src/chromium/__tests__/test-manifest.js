@@ -1,5 +1,7 @@
 /* eslint-env jest */
 
+import qs from 'qs'
+
 const manifest = require('../manifest.json')
 
 // Tests to avoid accidentally requesting new permissions.
@@ -32,6 +34,50 @@ test('search name is as expected', () => {
   expect(manifest.chrome_settings_overrides.search_provider.name).toEqual(
     'Search for a Cause'
   )
+})
+
+test('search URL uses the expected origin', () => {
+  const searchURL =
+    manifest.chrome_settings_overrides.search_provider.search_url
+  const searchURLPlaceholderRemoved = searchURL.replace(
+    '{searchTerms}',
+    'hello'
+  )
+  const { origin } = new URL(searchURLPlaceholderRemoved)
+  expect(origin).toEqual('https://tab.gladly.io')
+})
+
+test('search URL has the expected page pathname', () => {
+  const searchURL =
+    manifest.chrome_settings_overrides.search_provider.search_url
+  const searchURLPlaceholderRemoved = searchURL.replace(
+    '{searchTerms}',
+    'hello'
+  )
+  const { pathname } = new URL(searchURLPlaceholderRemoved)
+  expect(pathname).toEqual('/search')
+})
+
+test('search URL includes the "q" parameter with a value of the search query', () => {
+  const searchURL =
+    manifest.chrome_settings_overrides.search_provider.search_url
+  const searchURLPlaceholderRemoved = searchURL.replace(
+    '{searchTerms}',
+    'hello'
+  )
+  const { search } = new URL(searchURLPlaceholderRemoved)
+  expect(qs.parse(search, { ignoreQueryPrefix: true }).q).toEqual('hello')
+})
+
+test('search URL includes the "src" parameter with a value of "chrome"', () => {
+  const searchURL =
+    manifest.chrome_settings_overrides.search_provider.search_url
+  const searchURLPlaceholderRemoved = searchURL.replace(
+    '{searchTerms}',
+    'hello'
+  )
+  const { search } = new URL(searchURLPlaceholderRemoved)
+  expect(qs.parse(search, { ignoreQueryPrefix: true }).src).toEqual('chrome')
 })
 
 // Basic display tests.
