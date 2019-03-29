@@ -60,25 +60,26 @@ describe('background script', () => {
   //   })
   // })
 
-  // it('sets the post-uninstall URL', () => {
-  //   const ext = require('../extension')
-  //   require('../background')
-  //   expect(ext.runtime.setUninstallURL)
-  //     .toHaveBeenCalledWith('https://tab.gladly.io/newtab/uninstalled/')
-  // })
+  it('sets the post-uninstall URL', () => {
+    const ext = require('../extension')
+    require('../background')
+    expect(ext.runtime.setUninstallURL).toHaveBeenCalledWith(
+      'https://tab.gladly.io/search/uninstalled/'
+    )
+  })
 
-  // it('gracefully handles errors with setting the post-uninstall URL', () => {
-  //   const ext = require('../extension')
-  //   ext.runtime.setUninstallURL.mockImplementationOnce(() => {
-  //     throw new Error('Whoops!')
-  //   })
+  it('gracefully handles errors with setting the post-uninstall URL', () => {
+    const ext = require('../extension')
+    ext.runtime.setUninstallURL.mockImplementationOnce(() => {
+      throw new Error('Whoops!')
+    })
 
-  //   // Suppress expected console error.
-  //   jest.spyOn(console, 'error').mockImplementationOnce(() => {})
+    // Suppress expected console error.
+    jest.spyOn(console, 'error').mockImplementationOnce(() => {})
 
-  //   // Should not throw.
-  //   require('../background')
-  // })
+    // Should not throw.
+    require('../background')
+  })
 
   it('opens a tab to search on extension icon click', () => {
     const ext = require('../extension')

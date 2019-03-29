@@ -16,13 +16,13 @@ import ext from './extension'
 //   }
 // })
 
-// // On uninstall, open a post-uninstall page to get feedback.
-// try {
-//   const postUninstallURL = 'https://tab.gladly.io/newtab/uninstalled/'
-//   ext.runtime.setUninstallURL(postUninstallURL)
-// } catch (e) {
-//   console.error(e)
-// }
+// On uninstall, open a post-uninstall page to get feedback.
+try {
+  const postUninstallURL = 'https://tab.gladly.io/search/uninstalled/'
+  ext.runtime.setUninstallURL(postUninstallURL)
+} catch (e) {
+  console.error(e)
+}
 
 try {
   ext.browserAction.onClicked.addListener(() => {
