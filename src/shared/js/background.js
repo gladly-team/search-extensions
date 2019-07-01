@@ -21,3 +21,16 @@ try {
 } catch (e) {
   console.error(e)
 }
+
+// Firefox does not support externally_connectable:
+// https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/externally_connectable
+ext.runtime.onMessageExternal.addListener((request, sender, sendResponse) => {
+  if (request) {
+    if (request.message) {
+      if (request.message === 'ping') {
+        sendResponse({ installed: true })
+      }
+    }
+  }
+  return true
+})

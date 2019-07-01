@@ -23,6 +23,9 @@ global.chrome = {
       CHROME_UPDATE: 'chrome_update',
       SHARED_MODULE_UPDATE: 'shared_module_update',
     },
+    onMessageExternal: {
+      addListener: jest.fn(),
+    },
     setUninstallURL: jest.fn(),
   },
   tabs: {
@@ -46,6 +49,9 @@ global.browser = {
       UPDATE: 'update',
       BROWSER_UPDATE: 'browser_update',
       SHARED_MODULE_UPDATE: 'shared_module_update',
+    },
+    onMessageExternal: {
+      addListener: jest.fn(),
     },
     setUninstallURL: jest.fn(),
   },
