@@ -28,9 +28,9 @@ We need to provide source code for review (see [docs](https://developer.mozilla.
 3. Paste the following instructions for the reviewer to build from source
 ```
 Instructions for the reviewer to build from source:
-1. Unzip the source code file
-2. Navigate to the root of the source code directory
-3. Install Yarn (https://yarnpkg.com/en/)
-4. Run `yarn` to install dependencies
+1. Go to https://github.com/gladly-team/search-extensions, click "Clone or download", and click "Download ZIP".
+2. Unzip the source code file and navigate to the root of the source code directory.
+3. Install Yarn (https://yarnpkg.com/en/).
+4. Run `yarn` to install dependencies.
 5. Run `yarn run firefox:build`. The built extension will be in `./build/firefox/`.
 ```
