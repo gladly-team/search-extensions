@@ -26,10 +26,11 @@ We need to provide source code for review (see [docs](https://developer.mozilla.
 1. Download this repository as a .zip file
 2. In the Add-ons Developer Hub, upload the .zip file as "Source code" when releasing a new version
 3. Paste the following instructions for the reviewer to build from source
-
+```
 Instructions for the reviewer to build from source:
 1. Unzip the source code file
-2. Navigate to the root of the source code direcotry
+2. Navigate to the root of the source code directory
 3. Install Yarn (https://yarnpkg.com/en/)
 4. Run `yarn` to install dependencies
 5. Run `yarn run firefox:build`. The built extension will be in `./build/firefox/`.
+```
