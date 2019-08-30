@@ -125,4 +125,49 @@ describe('background script', () => {
       id: 'some-tab-id',
     })
   })
+
+  it('sets a listener for the onMessageExternal event', () => {
+    const ext = require('../extension')
+    require('../background')
+    expect(ext.runtime.onMessageExternal.addListener).toHaveBeenCalled()
+  })
+
+  it('returns true from the addListener handler', () => {
+    const ext = require('../extension')
+    require('../background')
+    const handler = ext.runtime.onMessageExternal.addListener.mock.calls[0][0]
+    expect(handler()).toBe(true)
+  })
+
+  it('sends a response to message="ping"', () => {
+    const ext = require('../extension')
+    require('../background')
+    const handler = ext.runtime.onMessageExternal.addListener.mock.calls[0][0]
+    const mockSendResponse = jest.fn()
+    handler({ message: 'ping' }, {}, mockSendResponse)
+    expect(mockSendResponse).toHaveBeenCalledWith({ installed: true })
+  })
+
+  it("sends an empty response to a message we don't support", () => {
+    const ext = require('../extension')
+    require('../background')
+    const handler = ext.runtime.onMessageExternal.addListener.mock.calls[0][0]
+    const mockSendResponse = jest.fn()
+    handler({ message: 'total-nonsense' }, {}, mockSendResponse)
+    expect(mockSendResponse).toHaveBeenCalledTimes(1)
+    expect(mockSendResponse.mock.calls[0][0]).toBeUndefined()
+  })
+
+  it('gracefully handles errors with setting the onInstalled listener', () => {
+    const ext = require('../extension')
+    ext.runtime.onMessageExternal.addListener.mockImplementationOnce(() => {
+      throw new Error('Whoops!')
+    })
+
+    // Suppress expected console error.
+    jest.spyOn(console, 'error').mockImplementationOnce(() => {})
+
+    // Should not throw.
+    require('../background')
+  })
 })
