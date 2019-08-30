@@ -4,7 +4,7 @@ if (!browserName) {
 }
 if (['chrome', 'firefox'].indexOf(browserName) < 0) {
   throw new Error(
-    'The environment variable process.env.BROWSER must be one of: "chrome", "firefox"'
+    `The environment variable process.env.BROWSER must be one of: "chrome", "firefox". Received: "${browserName}".`
   )
 }
 

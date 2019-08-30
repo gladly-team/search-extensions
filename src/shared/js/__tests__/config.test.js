@@ -22,7 +22,7 @@ describe('config', () => {
   it('throws an error if process.env.BROWSER is set to an invalid value', () => {
     process.env.BROWSER = 'blackberry-browser'
     expect(() => require('../config').default).toThrow(
-      'The environment variable process.env.BROWSER must be one of: "chrome", "firefox"'
+      'The environment variable process.env.BROWSER must be one of: "chrome", "firefox". Received: "blackberry-browser"'
     )
   })
 
