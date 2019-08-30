@@ -9,7 +9,7 @@ afterEach(() => {
 
 // Note: we partially mock the browser APIs in setupTests.js.
 
-describe('background script', () => {
+describe('background script: open tab on install', () => {
   it('sets a listener for the onInstalled event', () => {
     const ext = require('../extension')
     require('../background')
@@ -62,7 +62,9 @@ describe('background script', () => {
     // Should not throw.
     handler({ reason: 'install' })
   })
+})
 
+describe('background script: open tab after uninstall', () => {
   it('sets the post-uninstall URL', () => {
     const ext = require('../extension')
     require('../background')
@@ -83,7 +85,9 @@ describe('background script', () => {
     // Should not throw.
     require('../background')
   })
+})
 
+describe('background script: open search on extension icon click', () => {
   it('opens a tab to search on extension icon click', () => {
     const ext = require('../extension')
     require('../background')
@@ -125,7 +129,9 @@ describe('background script', () => {
       id: 'some-tab-id',
     })
   })
+})
 
+describe('background script: handle external messages', () => {
   it('sets a listener for the onMessageExternal event', () => {
     const ext = require('../extension')
     require('../background')
