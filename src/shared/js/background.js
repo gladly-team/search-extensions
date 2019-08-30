@@ -1,6 +1,7 @@
 /* eslint no-console:0 */
 
 import ext from './extension'
+import config from './config'
 
 // On install, open a welcome tab.
 // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onInstalled
@@ -27,10 +28,21 @@ try {
   console.error(e)
 }
 
+// On browser icon click, make a random search.
 try {
   ext.browserAction.onClicked.addListener(() => {
     try {
-      ext.tabs.create({ url: 'https://tab.gladly.io/search/random/' })
+      // Add the browser to the search "src" parameter.
+      const baseURL = 'https://tab.gladly.io/search/random/'
+      let finalURL = baseURL
+      if (config.browser === 'chrome') {
+        finalURL = `${baseURL}?src=chrome`
+      } else if (config.browser === 'firefox') {
+        finalURL = `${baseURL}?src=ff`
+      }
+      ext.tabs.create({
+        url: finalURL,
+      })
     } catch (e) {
       console.error(e)
     }
