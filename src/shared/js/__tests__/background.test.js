@@ -9,7 +9,7 @@ afterEach(() => {
 
 // Note: we partially mock the browser APIs in setupTests.js.
 
-describe('background script', () => {
+describe('background script: open tab on install', () => {
   it('sets a listener for the onInstalled event', () => {
     const ext = require('../extension')
     require('../background')
@@ -62,7 +62,9 @@ describe('background script', () => {
     // Should not throw.
     handler({ reason: 'install' })
   })
+})
 
+describe('background script: open tab after uninstall', () => {
   it('sets the post-uninstall URL', () => {
     const ext = require('../extension')
     require('../background')
@@ -83,7 +85,9 @@ describe('background script', () => {
     // Should not throw.
     require('../background')
   })
+})
 
+describe('background script: open search on extension icon click', () => {
   it('opens a tab to search on extension icon click', () => {
     const ext = require('../extension')
     require('../background')
@@ -124,5 +128,52 @@ describe('background script', () => {
     callback({
       id: 'some-tab-id',
     })
+  })
+})
+
+describe('background script: handle external messages', () => {
+  it('sets a listener for the onMessageExternal event', () => {
+    const ext = require('../extension')
+    require('../background')
+    expect(ext.runtime.onMessageExternal.addListener).toHaveBeenCalled()
+  })
+
+  it('returns true from the addListener handler', () => {
+    const ext = require('../extension')
+    require('../background')
+    const handler = ext.runtime.onMessageExternal.addListener.mock.calls[0][0]
+    expect(handler()).toBe(true)
+  })
+
+  it('sends a response to message="ping"', () => {
+    const ext = require('../extension')
+    require('../background')
+    const handler = ext.runtime.onMessageExternal.addListener.mock.calls[0][0]
+    const mockSendResponse = jest.fn()
+    handler({ message: 'ping' }, {}, mockSendResponse)
+    expect(mockSendResponse).toHaveBeenCalledWith({ installed: true })
+  })
+
+  it("sends an empty response to a message we don't support", () => {
+    const ext = require('../extension')
+    require('../background')
+    const handler = ext.runtime.onMessageExternal.addListener.mock.calls[0][0]
+    const mockSendResponse = jest.fn()
+    handler({ message: 'total-nonsense' }, {}, mockSendResponse)
+    expect(mockSendResponse).toHaveBeenCalledTimes(1)
+    expect(mockSendResponse.mock.calls[0][0]).toBeUndefined()
+  })
+
+  it('gracefully handles errors with setting the onInstalled listener', () => {
+    const ext = require('../extension')
+    ext.runtime.onMessageExternal.addListener.mockImplementationOnce(() => {
+      throw new Error('Whoops!')
+    })
+
+    // Suppress expected console error.
+    jest.spyOn(console, 'error').mockImplementationOnce(() => {})
+
+    // Should not throw.
+    require('../background')
   })
 })

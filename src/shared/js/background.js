@@ -38,3 +38,23 @@ try {
 } catch (e) {
   console.error(e)
 }
+
+// Listen to messages from the webpage.
+// Note: Firefox does not yet support externally_connectable:
+// https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/externally_connectable
+try {
+  ext.runtime.onMessageExternal.addListener((request, sender, sendResponse) => {
+    if (request && request.message) {
+      switch (request.message) {
+        case 'ping':
+          sendResponse({ installed: true })
+          break
+        default:
+          sendResponse()
+      }
+    }
+    return true
+  })
+} catch (e) {
+  console.error(e)
+}
