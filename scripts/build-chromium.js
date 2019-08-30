@@ -9,6 +9,8 @@ const archiver = require('archiver')
 // development experience:
 // https://github.com/xpl/crx-hotreload/blob/master/hot-reload.js
 
+process.env.BROWSER = 'chrome'
+
 const BASE_BUILD_DIR = path.join(__dirname, '../build/')
 const BUILD_DIR = path.join(BASE_BUILD_DIR, 'chromium/')
 const SHARED_CODE_BUILD_DIR = path.join(
