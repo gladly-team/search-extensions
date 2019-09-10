@@ -4,6 +4,8 @@ const fs = require('fs-extra')
 const path = require('path')
 const { execSync } = require('child_process')
 
+process.env.BROWSER = 'firefox'
+
 const SRC_DIR = path.join(__dirname, '../src/firefox/')
 const BUILD_DIR = path.join(__dirname, '../build/firefox/')
 const INTERMEDIATE_BUILD_DIR = path.join(

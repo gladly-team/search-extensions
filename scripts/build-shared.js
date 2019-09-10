@@ -10,6 +10,15 @@ const BUILD_DIR = path.join(__dirname, '../intermediate-builds/shared/')
 if (process.env.NODE_ENV !== 'production') {
   throw new Error('Builds must have NODE_ENV=production')
 }
+const browserName = process.env.BROWSER
+if (!browserName) {
+  throw new Error('The environment variable process.env.BROWSER must be set.')
+}
+if (['chrome', 'firefox'].indexOf(browserName) < 0) {
+  throw new Error(
+    `The environment variable process.env.BROWSER must be one of: "chrome", "firefox". Received: "${browserName}".`
+  )
+}
 
 // Empty the build directory.
 fs.emptyDirSync(BUILD_DIR)
@@ -31,6 +40,12 @@ const webpackConfig = {
       },
     ],
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'process.env.BROWSER': JSON.stringify(process.env.BROWSER),
+    }),
+  ],
 }
 
 webpack(webpackConfig).run(err => {
