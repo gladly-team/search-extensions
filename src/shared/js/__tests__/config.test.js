@@ -3,27 +3,15 @@
 jest.mock('../extension')
 
 afterEach(() => {
+  delete process.env.BROWSER
   jest.resetModules()
 })
 
 describe('config', () => {
-  it('throws an error if process.env.BROWSER is not set', () => {
+  it('returns the expected "browser" value when process.env.BROWSER is not defined', () => {
     delete process.env.BROWSER
-    expect(() => require('../config').default).toThrow(
-      'The environment variable process.env.BROWSER must be set.'
-    )
-  })
-
-  it('does not throw an error if process.env.BROWSER is  set', () => {
-    process.env.BROWSER = 'chrome'
-    expect(() => require('../config').default).not.toThrow()
-  })
-
-  it('throws an error if process.env.BROWSER is set to an invalid value', () => {
-    process.env.BROWSER = 'blackberry-browser'
-    expect(() => require('../config').default).toThrow(
-      'The environment variable process.env.BROWSER must be one of: "chrome", "firefox". Received: "blackberry-browser"'
-    )
+    const config = require('../config').default
+    expect(config.browser).toBeUndefined()
   })
 
   it('returns the expected "browser" value when set to chrome', () => {
