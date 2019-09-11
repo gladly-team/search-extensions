@@ -30,6 +30,12 @@ test('only overrides search settings', () => {
   ])
 })
 
+// This requires new permissions, unfortunately, and will disable
+// the extension for existing users.
+test('manifest does not declare externally_connectable', () => {
+  expect(manifest.externally_connectable).toBeUndefined()
+})
+
 // Search settings tests.
 
 test('search name is as expected', () => {

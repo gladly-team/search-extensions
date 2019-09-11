@@ -31,12 +31,6 @@
       "is_default": true
     }
   },
-  "externally_connectable": {
-    "matches": [
-      "*://localhost/*",
-      "https://*.gladly.io/*"
-    ]
-  },
   "permissions": [],
   "manifest_version": 2
 }
