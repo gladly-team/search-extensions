@@ -3,22 +3,10 @@
 import ext from './extension'
 import config from './config'
 
-// On install, open a welcome tab.
-// https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onInstalled
-try {
-  ext.runtime.onInstalled.addListener(details => {
-    try {
-      if (details.reason === ext.runtime.OnInstalledReason.INSTALL) {
-        const postInstallURL = 'https://tab.gladly.io/search/first-search/'
-        ext.tabs.create({ url: postInstallURL })
-      }
-    } catch (e) {
-      console.error(e)
-    }
-  })
-} catch (e) {
-  console.error(e)
-}
+// We cannot open a welcome page on install, because there's
+// a bug in Firefox that will hide the confirmation dialog
+// for changing the default search engine:
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1544271
 
 // On uninstall, open a post-uninstall page to get feedback.
 try {
