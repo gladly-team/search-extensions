@@ -25,4 +25,10 @@ describe('config', () => {
     const config = require('../config').default
     expect(config.browser).toEqual('firefox')
   })
+
+  it('returns the expected "browser" value when set to edge', () => {
+    process.env.BROWSER = 'edge'
+    const config = require('../config').default
+    expect(config.browser).toEqual('edge')
+  })
 })

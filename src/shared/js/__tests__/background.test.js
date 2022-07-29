@@ -78,6 +78,20 @@ describe('background script: open search on extension icon click', () => {
     })
   })
 
+  it('sets the "src" URL param value to "edge" when it is the Edge extension', () => {
+    const config = require('../config')
+    config.browser = 'edge'
+    const ext = require('../extension')
+    require('../background')
+    const callback = ext.browserAction.onClicked.addListener.mock.calls[0][0]
+    callback({
+      id: 'some-tab-id',
+    })
+    expect(ext.tabs.create).toHaveBeenCalledWith({
+      url: 'https://tab.gladly.io/search/random/?src=edge',
+    })
+  })
+
   it('sets the "src" URL param value to "ff" when it is the Firefox extension', () => {
     const config = require('../config')
     config.browser = 'firefox'

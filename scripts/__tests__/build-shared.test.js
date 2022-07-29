@@ -30,7 +30,7 @@ describe('config', () => {
   it('throws an error if process.env.BROWSER is set to an invalid value', () => {
     process.env.BROWSER = 'blackberry-browser'
     expect(() => require('../build-shared')).toThrow(
-      'The environment variable process.env.BROWSER must be one of: "chrome", "firefox". Received: "blackberry-browser"'
+      'The environment variable process.env.BROWSER must be one of: "chrome", "firefox" or "edge". Received: "blackberry-browser"'
     )
   })
 })
