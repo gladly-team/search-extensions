@@ -1,7 +1,7 @@
 {
   "name": "Search for a Cause",
   "description": "Raise money for charity every time you search.",
-  "version": "0.7",
+  "version": "0.1",
   "browser_action": {
     "default_icon": {
       "16": "./img/logo16.png",
@@ -32,5 +32,5 @@
     }
   },
   "permissions": [],
-  "manifest_version": 2
+  "manifest_version": 3
 }
