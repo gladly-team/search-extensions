@@ -25,7 +25,7 @@ if (allowedBrowsers.indexOf(buildTarget) < 0) {
   throw new Error('Specify either "chrome" or "edge" browser.')
 }
 
-const buildBrowser = browser => {
+const buildBrowser = (browser) => {
   process.env.BROWSER = browser
   let buildDirectory
   let sourceDirectory
@@ -54,7 +54,7 @@ const buildBrowser = browser => {
 
   // Filter copying source files to build. Return true if we should copy and
   // false if we should not.
-  const filterCopiedFiles = src => {
+  const filterCopiedFiles = (src) => {
     if (path.basename(src) === '.DS_Store') {
       return false
     }
@@ -78,7 +78,7 @@ const buildBrowser = browser => {
     console.log('Finished building.')
   })
 
-  archive.on('error', err => {
+  archive.on('error', (err) => {
     throw err
   })
 

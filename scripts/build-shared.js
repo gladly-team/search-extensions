@@ -48,7 +48,7 @@ const webpackConfig = {
   ],
 }
 
-webpack(webpackConfig).run(err => {
+webpack(webpackConfig).run((err) => {
   if (err) {
     console.log('Failed to compile.', err)
     process.exit(1)
