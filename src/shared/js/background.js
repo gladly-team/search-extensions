@@ -25,6 +25,8 @@ try {
       let finalURL = baseURL
       if (config.browser === 'chrome') {
         finalURL = `${baseURL}?src=chrome`
+      } else if (config.browser === 'edge') {
+        finalURL = `${baseURL}?src=edge`
       } else if (config.browser === 'firefox') {
         finalURL = `${baseURL}?src=ff`
       }
