@@ -32,7 +32,7 @@ const apis = [
 function Extension() {
   const _this = this
 
-  apis.forEach(api => {
+  apis.forEach((api) => {
     _this[api] = null
 
     try {

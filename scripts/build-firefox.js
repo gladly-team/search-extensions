@@ -29,14 +29,14 @@ fs.emptyDirSync(INTERMEDIATE_BUILD_DIR)
 
 // Filter copying source files to build. Return true if we should copy and
 // false if we should not.
-const filterCopiedFiles = src => {
+const filterCopiedFiles = (src) => {
   const ignoredPaths = ['/tmp', '/__tests__']
   if (path.basename(src) === '.DS_Store') {
     return false
   }
-  const containsIgnoredPath = ignoredPaths.some(ignoredPath => {
-    return src.indexOf(ignoredPath) > -1
-  })
+  const containsIgnoredPath = ignoredPaths.some(
+    (ignoredPath) => src.indexOf(ignoredPath) > -1
+  )
   if (containsIgnoredPath) {
     return false
   }
