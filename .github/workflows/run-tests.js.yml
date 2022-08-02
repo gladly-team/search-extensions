@@ -9,6 +9,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2 # So Codecov can get the commit SHA
       - name: Use Node
         uses: actions/setup-node@v1
         with:
