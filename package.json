@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "yarn run lint && jest --env=jsdom",
-    "build": "npm-run-all -s chromium:build firefox:build",
+    "build": "npm-run-all -s chromium:build edge:build firefox:build",
     "chromium:build": "npm-run-all -s chromium:test chromium:build:no-test",
     "chromium:test": "yarn test ./",
     "chromium:build:no-test": "NODE_ENV=production node ./scripts/build-chromium.js chrome",
