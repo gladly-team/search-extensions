@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 function show(enabled) {
     if (typeof enabled === "boolean") {
         document.body.classList.toggle(`state-on`, enabled);
