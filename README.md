@@ -9,9 +9,11 @@ The easiest way to do good every day! Join in: [search.gladly.io](https://search
 
 #### 🟢 &nbsp; [Firefox](https://addons.mozilla.org/en-US/firefox/addon/search-for-a-cause/)
 
-#### ❌ &nbsp; Safari - does not allow extensions to customize the search engine.
+#### ❌ &nbsp; Safari
+* Safari does not allow extensions to customize the search engine.
 
-#### ❌ &nbsp; Opera - does not allow extensions to customize the search engine.
+#### ❌ &nbsp; Opera
+* Opera does not allow extensions to customize the search engine.
 
 **We aim to support every major browser.** We continue to advocate for change in the browsers restrict functionality, because we believe everybody should be able to raise money for charity as they browse the web.
 
