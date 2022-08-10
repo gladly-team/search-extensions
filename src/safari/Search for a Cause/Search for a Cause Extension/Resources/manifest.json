@@ -11,6 +11,16 @@
     "256": "images/icon-256.png",
     "512": "images/icon-512.png"
   },
+  "chrome_settings_overrides": {
+      "search_provider": {
+        "name": "Search for a Cause",
+        "keyword": "SFAC",
+        "search_url": "https://tab.gladly.io/search?q={searchTerms}&src=safari",
+        "favicon_url": "https://tab.gladly.io/search/search-favicon.png",
+        "encoding": "UTF-8",
+        "is_default": true
+      }
+    },
   "background": {
     "scripts": [ "background.js" ],
     "persistent": false
