@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "default_locale": "en",
+  "name": "__MSG_extension_name__",
+  "description": "__MSG_extension_description__",
+  "version": "1.0",
+  "icons": {
+    "48": "images/icon-48.png",
+    "96": "images/icon-96.png",
+    "128": "images/icon-128.png",
+    "256": "images/icon-256.png",
+    "512": "images/icon-512.png"
+  },
+  "chrome_settings_overrides": {
+      "search_provider": {
+        "name": "Search for a Cause",
+        "keyword": "SFAC",
+        "search_url": "https://tab.gladly.io/search?q={searchTerms}&src=safari",
+        "favicon_url": "https://tab.gladly.io/search/search-favicon.png",
+        "encoding": "UTF-8",
+        "is_default": true
+      }
+    },
+  "background": {
+    "scripts": [ "background.js" ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "images/toolbar-icon-16.png",
+      "32": "images/toolbar-icon-32.png",
+      "72": "images/toolbar-icon-72.png"
+    }
+  },
+  "permissions": []
+}
