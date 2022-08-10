@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E2B804A228A3FB430070EB90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B804A128A3FB430070EB90 /* AppDelegate.swift */; };
+		E2B804A628A3FB430070EB90 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = E2B804A428A3FB430070EB90 /* Main.html */; };
+		E2B804A828A3FB430070EB90 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B804A728A3FB430070EB90 /* Icon.png */; };
+		E2B804AA28A3FB430070EB90 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = E2B804A928A3FB430070EB90 /* Style.css */; };
+		E2B804AC28A3FB430070EB90 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = E2B804AB28A3FB430070EB90 /* Script.js */; };
+		E2B804AE28A3FB430070EB90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B804AD28A3FB430070EB90 /* ViewController.swift */; };
+		E2B804B128A3FB430070EB90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B804AF28A3FB430070EB90 /* Main.storyboard */; };
+		E2B804B328A3FB450070EB90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2B804B228A3FB450070EB90 /* Assets.xcassets */; };
+		E2B804BB28A3FB450070EB90 /* Search for a Cause Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E2B804BA28A3FB450070EB90 /* Search for a Cause Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E2B804C028A3FB450070EB90 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B804BF28A3FB450070EB90 /* SafariWebExtensionHandler.swift */; };
+		E2B804C328A3FB450070EB90 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = E2B804C228A3FB450070EB90 /* _locales */; };
+		E2B804C528A3FB450070EB90 /* images in Resources */ = {isa = PBXBuildFile; fileRef = E2B804C428A3FB450070EB90 /* images */; };
+		E2B804C728A3FB450070EB90 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = E2B804C628A3FB450070EB90 /* manifest.json */; };
+		E2B804C928A3FB450070EB90 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = E2B804C828A3FB450070EB90 /* background.js */; };
+		E2B804CB28A3FB450070EB90 /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = E2B804CA28A3FB450070EB90 /* content.js */; };
+		E2B804CD28A3FB450070EB90 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = E2B804CC28A3FB450070EB90 /* popup.html */; };
+		E2B804CF28A3FB450070EB90 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = E2B804CE28A3FB450070EB90 /* popup.css */; };
+		E2B804D128A3FB450070EB90 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = E2B804D028A3FB450070EB90 /* popup.js */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E2B804BC28A3FB450070EB90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E2B8049628A3FB430070EB90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2B804B928A3FB450070EB90;
+			remoteInfo = "Search for a Cause Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E2B804D928A3FB450070EB90 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E2B804BB28A3FB450070EB90 /* Search for a Cause Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E2B8049E28A3FB430070EB90 /* Search for a Cause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Search for a Cause.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2B804A128A3FB430070EB90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E2B804A528A3FB430070EB90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
+		E2B804A728A3FB430070EB90 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		E2B804A928A3FB430070EB90 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		E2B804AB28A3FB430070EB90 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		E2B804AD28A3FB430070EB90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E2B804B028A3FB430070EB90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E2B804B228A3FB450070EB90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2B804B428A3FB450070EB90 /* Search_for_a_Cause.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Search_for_a_Cause.entitlements; sourceTree = "<group>"; };
+		E2B804B528A3FB450070EB90 /* Search for a Cause.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Search for a Cause.entitlements"; sourceTree = "<group>"; };
+		E2B804BA28A3FB450070EB90 /* Search for a Cause Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Search for a Cause Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2B804BF28A3FB450070EB90 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		E2B804C228A3FB450070EB90 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _locales; sourceTree = "<group>"; };
+		E2B804C428A3FB450070EB90 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		E2B804C628A3FB450070EB90 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
+		E2B804C828A3FB450070EB90 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = background.js; sourceTree = "<group>"; };
+		E2B804CA28A3FB450070EB90 /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = content.js; sourceTree = "<group>"; };
+		E2B804CC28A3FB450070EB90 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = popup.html; sourceTree = "<group>"; };
+		E2B804CE28A3FB450070EB90 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
+		E2B804D028A3FB450070EB90 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
+		E2B804D228A3FB450070EB90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2B804D328A3FB450070EB90 /* Search_for_a_Cause_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Search_for_a_Cause_Extension.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E2B8049B28A3FB430070EB90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2B804B728A3FB450070EB90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E2B8049528A3FB430070EB90 = {
+			isa = PBXGroup;
+			children = (
+				E2B804A028A3FB430070EB90 /* Search for a Cause */,
+				E2B804BE28A3FB450070EB90 /* Search for a Cause Extension */,
+				E2B8049F28A3FB430070EB90 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E2B8049F28A3FB430070EB90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E2B8049E28A3FB430070EB90 /* Search for a Cause.app */,
+				E2B804BA28A3FB450070EB90 /* Search for a Cause Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2B804A028A3FB430070EB90 /* Search for a Cause */ = {
+			isa = PBXGroup;
+			children = (
+				E2B804A128A3FB430070EB90 /* AppDelegate.swift */,
+				E2B804AD28A3FB430070EB90 /* ViewController.swift */,
+				E2B804AF28A3FB430070EB90 /* Main.storyboard */,
+				E2B804B228A3FB450070EB90 /* Assets.xcassets */,
+				E2B804B428A3FB450070EB90 /* Search_for_a_Cause.entitlements */,
+				E2B804B528A3FB450070EB90 /* Search for a Cause.entitlements */,
+				E2B804A328A3FB430070EB90 /* Resources */,
+			);
+			path = "Search for a Cause";
+			sourceTree = "<group>";
+		};
+		E2B804A328A3FB430070EB90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2B804A428A3FB430070EB90 /* Main.html */,
+				E2B804A728A3FB430070EB90 /* Icon.png */,
+				E2B804A928A3FB430070EB90 /* Style.css */,
+				E2B804AB28A3FB430070EB90 /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E2B804BE28A3FB450070EB90 /* Search for a Cause Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E2B804BF28A3FB450070EB90 /* SafariWebExtensionHandler.swift */,
+				E2B804D228A3FB450070EB90 /* Info.plist */,
+				E2B804D328A3FB450070EB90 /* Search_for_a_Cause_Extension.entitlements */,
+				E2B804C128A3FB450070EB90 /* Resources */,
+			);
+			path = "Search for a Cause Extension";
+			sourceTree = "<group>";
+		};
+		E2B804C128A3FB450070EB90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2B804C228A3FB450070EB90 /* _locales */,
+				E2B804C428A3FB450070EB90 /* images */,
+				E2B804C628A3FB450070EB90 /* manifest.json */,
+				E2B804C828A3FB450070EB90 /* background.js */,
+				E2B804CA28A3FB450070EB90 /* content.js */,
+				E2B804CC28A3FB450070EB90 /* popup.html */,
+				E2B804CE28A3FB450070EB90 /* popup.css */,
+				E2B804D028A3FB450070EB90 /* popup.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E2B8049D28A3FB430070EB90 /* Search for a Cause */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2B804DA28A3FB450070EB90 /* Build configuration list for PBXNativeTarget "Search for a Cause" */;
+			buildPhases = (
+				E2B8049A28A3FB430070EB90 /* Sources */,
+				E2B8049B28A3FB430070EB90 /* Frameworks */,
+				E2B8049C28A3FB430070EB90 /* Resources */,
+				E2B804D928A3FB450070EB90 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2B804BD28A3FB450070EB90 /* PBXTargetDependency */,
+			);
+			name = "Search for a Cause";
+			productName = "Search for a Cause";
+			productReference = E2B8049E28A3FB430070EB90 /* Search for a Cause.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E2B804B928A3FB450070EB90 /* Search for a Cause Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2B804D628A3FB450070EB90 /* Build configuration list for PBXNativeTarget "Search for a Cause Extension" */;
+			buildPhases = (
+				E2B804B628A3FB450070EB90 /* Sources */,
+				E2B804B728A3FB450070EB90 /* Frameworks */,
+				E2B804B828A3FB450070EB90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Search for a Cause Extension";
+			productName = "Search for a Cause Extension";
+			productReference = E2B804BA28A3FB450070EB90 /* Search for a Cause Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E2B8049628A3FB430070EB90 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					E2B8049D28A3FB430070EB90 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					E2B804B928A3FB450070EB90 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = E2B8049928A3FB430070EB90 /* Build configuration list for PBXProject "Search for a Cause" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E2B8049528A3FB430070EB90;
+			productRefGroup = E2B8049F28A3FB430070EB90 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E2B8049D28A3FB430070EB90 /* Search for a Cause */,
+				E2B804B928A3FB450070EB90 /* Search for a Cause Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E2B8049C28A3FB430070EB90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2B804A828A3FB430070EB90 /* Icon.png in Resources */,
+				E2B804B128A3FB430070EB90 /* Main.storyboard in Resources */,
+				E2B804AC28A3FB430070EB90 /* Script.js in Resources */,
+				E2B804A628A3FB430070EB90 /* Main.html in Resources */,
+				E2B804B328A3FB450070EB90 /* Assets.xcassets in Resources */,
+				E2B804AA28A3FB430070EB90 /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2B804B828A3FB450070EB90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2B804C928A3FB450070EB90 /* background.js in Resources */,
+				E2B804CF28A3FB450070EB90 /* popup.css in Resources */,
+				E2B804CD28A3FB450070EB90 /* popup.html in Resources */,
+				E2B804C528A3FB450070EB90 /* images in Resources */,
+				E2B804C728A3FB450070EB90 /* manifest.json in Resources */,
+				E2B804C328A3FB450070EB90 /* _locales in Resources */,
+				E2B804CB28A3FB450070EB90 /* content.js in Resources */,
+				E2B804D128A3FB450070EB90 /* popup.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2B8049A28A3FB430070EB90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2B804AE28A3FB430070EB90 /* ViewController.swift in Sources */,
+				E2B804A228A3FB430070EB90 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2B804B628A3FB450070EB90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2B804C028A3FB450070EB90 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E2B804BD28A3FB450070EB90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2B804B928A3FB450070EB90 /* Search for a Cause Extension */;
+			targetProxy = E2B804BC28A3FB450070EB90 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E2B804A428A3FB430070EB90 /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2B804A528A3FB430070EB90 /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		E2B804AF28A3FB430070EB90 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2B804B028A3FB430070EB90 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E2B804D428A3FB450070EB90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E2B804D528A3FB450070EB90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		E2B804D728A3FB450070EB90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Search for a Cause Extension/Search_for_a_Cause_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 839867Y5K7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Search for a Cause Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Search for a Cause Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.gladly.Search-for-a-Cause.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E2B804D828A3FB450070EB90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Search for a Cause Extension/Search_for_a_Cause_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 839867Y5K7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Search for a Cause Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Search for a Cause Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.gladly.Search-for-a-Cause.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		E2B804DB28A3FB450070EB90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Search for a Cause/Search for a Cause.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 839867Y5K7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Search for a Cause";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.gladly.Search-for-a-Cause";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E2B804DC28A3FB450070EB90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Search for a Cause/Search for a Cause.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 839867Y5K7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Search for a Cause";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.gladly.Search-for-a-Cause";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E2B8049928A3FB430070EB90 /* Build configuration list for PBXProject "Search for a Cause" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2B804D428A3FB450070EB90 /* Debug */,
+				E2B804D528A3FB450070EB90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2B804D628A3FB450070EB90 /* Build configuration list for PBXNativeTarget "Search for a Cause Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2B804D728A3FB450070EB90 /* Debug */,
+				E2B804D828A3FB450070EB90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2B804DA28A3FB450070EB90 /* Build configuration list for PBXNativeTarget "Search for a Cause" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2B804DB28A3FB450070EB90 /* Debug */,
+				E2B804DC28A3FB450070EB90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E2B8049628A3FB430070EB90 /* Project object */;
+}
