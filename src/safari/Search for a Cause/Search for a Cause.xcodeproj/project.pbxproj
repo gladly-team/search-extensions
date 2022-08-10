@@ -21,10 +21,6 @@
 		E2B804C528A3FB450070EB90 /* images in Resources */ = {isa = PBXBuildFile; fileRef = E2B804C428A3FB450070EB90 /* images */; };
 		E2B804C728A3FB450070EB90 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = E2B804C628A3FB450070EB90 /* manifest.json */; };
 		E2B804C928A3FB450070EB90 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = E2B804C828A3FB450070EB90 /* background.js */; };
-		E2B804CB28A3FB450070EB90 /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = E2B804CA28A3FB450070EB90 /* content.js */; };
-		E2B804CD28A3FB450070EB90 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = E2B804CC28A3FB450070EB90 /* popup.html */; };
-		E2B804CF28A3FB450070EB90 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = E2B804CE28A3FB450070EB90 /* popup.css */; };
-		E2B804D128A3FB450070EB90 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = E2B804D028A3FB450070EB90 /* popup.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,10 +65,6 @@
 		E2B804C428A3FB450070EB90 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		E2B804C628A3FB450070EB90 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
 		E2B804C828A3FB450070EB90 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = background.js; sourceTree = "<group>"; };
-		E2B804CA28A3FB450070EB90 /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = content.js; sourceTree = "<group>"; };
-		E2B804CC28A3FB450070EB90 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = popup.html; sourceTree = "<group>"; };
-		E2B804CE28A3FB450070EB90 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
-		E2B804D028A3FB450070EB90 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
 		E2B804D228A3FB450070EB90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2B804D328A3FB450070EB90 /* Search_for_a_Cause_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Search_for_a_Cause_Extension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,10 +148,6 @@
 				E2B804C428A3FB450070EB90 /* images */,
 				E2B804C628A3FB450070EB90 /* manifest.json */,
 				E2B804C828A3FB450070EB90 /* background.js */,
-				E2B804CA28A3FB450070EB90 /* content.js */,
-				E2B804CC28A3FB450070EB90 /* popup.html */,
-				E2B804CE28A3FB450070EB90 /* popup.css */,
-				E2B804D028A3FB450070EB90 /* popup.js */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -259,13 +247,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2B804C928A3FB450070EB90 /* background.js in Resources */,
-				E2B804CF28A3FB450070EB90 /* popup.css in Resources */,
-				E2B804CD28A3FB450070EB90 /* popup.html in Resources */,
 				E2B804C528A3FB450070EB90 /* images in Resources */,
 				E2B804C728A3FB450070EB90 /* manifest.json in Resources */,
 				E2B804C328A3FB450070EB90 /* _locales in Resources */,
-				E2B804CB28A3FB450070EB90 /* content.js in Resources */,
-				E2B804D128A3FB450070EB90 /* popup.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +420,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Search for a Cause Extension/Search_for_a_Cause_Extension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 839867Y5K7;
@@ -467,6 +452,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Search for a Cause Extension/Search_for_a_Cause_Extension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 839867Y5K7;
@@ -501,6 +487,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Search for a Cause/Search for a Cause.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -537,6 +524,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Search for a Cause/Search for a Cause.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
