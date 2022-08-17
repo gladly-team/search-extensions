@@ -53,7 +53,7 @@ test('search URL uses the expected origin', () => {
     'hello'
   )
   const { origin } = new URL(searchURLPlaceholderRemoved)
-  expect(origin).toEqual('https://tab.gladly.io')
+  expect(origin).toEqual('https://search.yahoo.com')
 })
 
 test('search URL has the expected page pathname', () => {
@@ -64,10 +64,10 @@ test('search URL has the expected page pathname', () => {
     'hello'
   )
   const { pathname } = new URL(searchURLPlaceholderRemoved)
-  expect(pathname).toEqual('/search')
+  expect(pathname).toEqual('/yhs/search')
 })
 
-test('search URL includes the "q" parameter with a value of the search query', () => {
+test('search URL includes the "p" parameter with a value of the search query', () => {
   const searchURL =
     manifest.chrome_settings_overrides.search_provider.search_url
   const searchURLPlaceholderRemoved = searchURL.replace(
@@ -75,10 +75,10 @@ test('search URL includes the "q" parameter with a value of the search query', (
     'hello'
   )
   const { search } = new URL(searchURLPlaceholderRemoved)
-  expect(qs.parse(search, { ignoreQueryPrefix: true }).q).toEqual('hello')
+  expect(qs.parse(search, { ignoreQueryPrefix: true }).p).toEqual('hello')
 })
 
-test('search URL includes the "src" parameter with a value of "ff"', () => {
+test('search URL includes the "hspart" parameter with a value of "gladly"', () => {
   const searchURL =
     manifest.chrome_settings_overrides.search_provider.search_url
   const searchURLPlaceholderRemoved = searchURL.replace(
@@ -86,7 +86,31 @@ test('search URL includes the "src" parameter with a value of "ff"', () => {
     'hello'
   )
   const { search } = new URL(searchURLPlaceholderRemoved)
-  expect(qs.parse(search, { ignoreQueryPrefix: true }).src).toEqual('ff')
+  expect(qs.parse(search, { ignoreQueryPrefix: true }).hspart).toEqual('gladly')
+})
+
+test('search URL includes the "hsimp" parameter with a value of "yhs-001"', () => {
+  const searchURL =
+    manifest.chrome_settings_overrides.search_provider.search_url
+  const searchURLPlaceholderRemoved = searchURL.replace(
+    '{searchTerms}',
+    'hello'
+  )
+  const { search } = new URL(searchURLPlaceholderRemoved)
+  expect(qs.parse(search, { ignoreQueryPrefix: true }).hspart).toEqual('gladly')
+})
+
+test('search URL includes the "type" parameter with a value of "src_ff.c_none.r_none"', () => {
+  const searchURL =
+    manifest.chrome_settings_overrides.search_provider.search_url
+  const searchURLPlaceholderRemoved = searchURL.replace(
+    '{searchTerms}',
+    'hello'
+  )
+  const { search } = new URL(searchURLPlaceholderRemoved)
+  expect(qs.parse(search, { ignoreQueryPrefix: true }).type).toEqual(
+    'src_ff.c_none.r_none'
+  )
 })
 
 // Browser action tests.
