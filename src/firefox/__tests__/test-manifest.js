@@ -92,11 +92,11 @@ test('search URL includes the "src" parameter with a value of "ff"', () => {
 // Browser action tests.
 
 test('browser action display name is as expected', () => {
-  expect(manifest.browser_action.default_title).toEqual('Search for a Cause')
+  expect(manifest.action.default_title).toEqual('Search for a Cause')
 })
 
 test('browser action default icons match extension icons', () => {
-  expect(manifest.browser_action.default_icon).toEqual(manifest.icons)
+  expect(manifest.action.default_icon).toEqual(manifest.icons)
 })
 
 // Basic display tests.
