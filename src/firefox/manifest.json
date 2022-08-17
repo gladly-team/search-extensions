@@ -24,7 +24,7 @@
     "search_provider": {
       "name": "Search for a Cause",
       "keyword": "SFAC",
-      "search_url": "https://tab.gladly.io/search?q={searchTerms}&src=ff",
+      "search_url": "https://search.yahoo.com/yhs/search?hspart=gladly&hsimp=yhs-001&type=src_ff.c_none.r_none&p={searchTerms}",
       "favicon_url": "https://tab.gladly.io/search/search-favicon.png",
       "encoding": "UTF-8",
       "is_default": true
